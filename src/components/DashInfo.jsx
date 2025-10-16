@@ -2,7 +2,7 @@ function DashInfo({ icon, num, text, color }) {
   const IconComponent = icon
 
   return (
-    <div className="flex items-center justify-between text-white p-4 rounded-lg shadow-md border-gray-300 border w-56 h-25">
+    <div className="flex items-center justify-between bg-white text-white p-4 rounded-lg shadow-md border-gray-300 border w-56 h-25">
       <div>
         <p className="text-sm text-black">{text}</p>
         <h1 className="text-2xl text-black font-bold mt-1">{num}</h1>

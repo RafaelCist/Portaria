@@ -2,13 +2,13 @@ import { CheckCircle, XCircle } from "lucide-react"
 
 function Recent({ records }) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col bg-w gap-2">
       {records
         .sort((a, b) => new Date(b.time) - new Date(a.time))
         .map((record, index) => (
           <div
             key={index}
-            className="flex items-center justify-between bg-gray-100 p-3 rounded shadow-sm"
+            className="flex items-center justify-between bg-white bg-gray-100 p-3 rounded shadow-sm"
           >
             <div className="mr-3">
               {record.entry ? (

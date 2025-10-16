@@ -39,21 +39,21 @@ function AddEmployee() {
             label="Nome"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Digite seu nome"
+            placeholder="Digite o nome"
           />
 
           <InputField
             label="CPF"
             value={cpf}
             onChange={(e) => setCpf(e.target.value)}
-            placeholder="Digite seu CPF"
+            placeholder="Digite o CPF"
           />
 
           <InputField
             label="Veículo"
             value={vehicle}
             onChange={(e) => setVehicle(e.target.value)}
-            placeholder="Digite seu veículo"
+            placeholder="Digite o veículo"
           />
 
           <div className="flex justify-between mt-6">

@@ -1,12 +1,12 @@
 import { useState, useRef } from "react";
-import { User } from "lucide-react"; 
+import { Camera, User } from "lucide-react";
 
 function PhotoInput({ onChange }) {
   const [preview, setPreview] = useState(null);
   const inputRef = useRef();
 
   const handleClick = () => {
-    inputRef.current.click(); 
+    inputRef.current.click();
   };
 
   const handleFileChange = (e) => {
@@ -14,7 +14,7 @@ function PhotoInput({ onChange }) {
     if (!file) return;
 
     setPreview(URL.createObjectURL(file));
-    onChange(file); 
+    onChange(file);
   };
 
   return (
@@ -32,7 +32,9 @@ function PhotoInput({ onChange }) {
         ) : (
           <User size={48} className="text-gray-400" />
         )}
-       
+        <div className="absolute bottom-1 right-1 bg-gray-200 text-white p-1 rounded-full">
+          <Camera />
+        </div>
       </div>
       <input
         type="file"

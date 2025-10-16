@@ -3,6 +3,8 @@ import Sidebar from "../components/Sidebar";
 import { useState } from "react";
 import ConfirmModal from "../components/ConfirmModal";
 import { Link } from "react-router-dom";
+import InputSearch from "../components/InputSearch";
+import EmployeeDetails from "../components/EmployeeDetails";
 
 function Employees() {
   const [funcionarios, setFuncionarios] = useState([
@@ -14,6 +16,17 @@ function Employees() {
   const [isOpen, setIsOpen] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [selectedFunc, setSelectedFunc] = useState(null);
+  const [showDetails, setShowDetails] = useState(false);
+
+  const openDetails = (func) => {
+    setSelectedFunc(func);
+    setShowDetails(true);
+  };
+
+const handleDeleteFromDetails = (func) => {
+  setShowDetails(false);  
+  handleOpenModal(func);  
+};;
 
   const handleOpenModal = (func) => {
     setSelectedFunc(func);
@@ -21,25 +34,38 @@ function Employees() {
   };
 
   const listaFuncionarios = funcionarios.map((f) => (
-    <div key={f.cpf} className="grid grid-cols-4 items-center p-3">
+    <div
+      key={f.cpf}
+      className="group grid grid-cols-4 items-center p-3 bg-white cursor-pointer rounded-md
+                 transform transition-all duration-300
+                 hover:bg-blue-600 hover:text-white hover:scale-[1.02] hover:shadow-lg"
+      onClick={() => openDetails(f)}
+    >
       <div className="flex items-center gap-3">
-        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white">
+        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white
+                        transition-all duration-300 group-hover:bg-white group-hover:text-blue-600">
           <User size={20} />
         </div>
-        <span className="font-medium text-gray-800">{f.name}</span>
+        <p className="font-medium transition-all duration-300">{f.name}</p>
       </div>
-      <div>{f.cpf}</div>
-      <div>{f.veiculo}</div>
+
+      <p>{f.cpf}</p>
+      <p>{f.veiculo}</p>
+
       <div className="flex justify-center">
         <Link
           to={`/editar?cpf=${encodeURIComponent(f.cpf)}`}
-          className="text-blue-600 hover:text-blue-800 mr-3 flex items-center"
+          className="text-blue-600 mr-3 flex items-center transition-all duration-300 group-hover:text-white"
+          onClick={(e) => e.stopPropagation()} 
         >
           <Edit size={18} />
         </Link>
         <button
-          onClick={() => handleOpenModal(f)}
-          className="text-red-600 hover:text-red-800"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleOpenModal(f);
+          }}
+          className="text-red-600 group-hover:text-white transition-all duration-300 cursor-pointer"
         >
           <Trash2 size={18} />
         </button>
@@ -50,6 +76,7 @@ function Employees() {
   return (
     <div className="flex h-screen bg-gray-100">
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+
       <main className="flex-1 p-6 transition-all duration-300">
         <div className="flex justify-between">
           <div>
@@ -63,14 +90,16 @@ function Employees() {
             <Plus className="mr-2" /> Adicionar Funcionário
           </Link>
         </div>
-
-        <div className="m-5 w-[1000px] rounded-md bg-white">
-          <div className="grid grid-cols-4 bg-gray-200 p-3 font-semibold text-gray-700">
+        
+        <div className="m-5 w-[1000px] rounded-md">
+          <InputSearch placeholder="Buscar por nome, cpf ou placa"/>
+          <div className="grid grid-cols-4 bg-gray-200 p-3 font-semibold text-gray-700 my-2">
             <div>Nome</div>
             <div>CPF</div>
             <div>Veículo</div>
             <div className="text-center">Ações</div>
           </div>
+
           {listaFuncionarios.length > 0 ? (
             listaFuncionarios
           ) : (
@@ -93,6 +122,15 @@ function Employees() {
           text={`Deseja realmente apagar ${selectedFunc.name}?`}
           color="#EF4444"
           title="Apagar Funcionário"
+        />
+      )}
+
+      {selectedFunc && (
+        <EmployeeDetails
+          show={showDetails}
+          func={selectedFunc}
+          onClose={() => handleDeleteFromDetails}
+         onDelete={handleDeleteFromDetails}
         />
       )}
     </div>

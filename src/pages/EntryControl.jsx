@@ -61,7 +61,7 @@ export default function EntryControl() {
           {filtered.map((f, index) => (
             <div
               key={index}
-              className="flex items-center justify-between bg-gray-100 p-3 rounded shadow-sm"
+              className="flex items-center justify-between bg-white p-3 rounded shadow-sm"
             >
               <div className="flex items-center gap-2">
                 {f.entry ? <CheckCircle size={20} className="text-green-500" /> : <XCircle size={20} className="text-red-500" />}
