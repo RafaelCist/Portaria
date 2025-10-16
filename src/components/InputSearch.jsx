@@ -9,7 +9,7 @@ function InputSearch({ value, onChange, placeholder }) {
       </div>
 
       <input
-        type="text"
+        type="text" 
         placeholder={placeholder}
         className="w-full p-2 pl-10 rounded-3xl bg-white focus:outline-none focus:ring-2 shadow focus:ring-blue-500"
         value={value}

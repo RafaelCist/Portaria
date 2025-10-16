@@ -118,7 +118,7 @@ const handleDeleteFromDetails = (func) => {
   onConfirm={() => {
     setFuncionarios((prev) => prev.filter((f) => f.cpf !== selectedFunc.cpf));
     setShowModal(false);
-    setShowDetails(false); // fecha também os detalhes
+    setShowDetails(false); 
   }}
   text={`Deseja realmente apagar ${selectedFunc?.name}?`}
   color="#EF4444"
