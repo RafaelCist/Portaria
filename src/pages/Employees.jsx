@@ -24,9 +24,9 @@ function Employees() {
   };
 
 const handleDeleteFromDetails = (func) => {
-  setShowDetails(false);  
-  handleOpenModal(func);  
-};;
+  setSelectedFunc(func);
+  setShowModal(true);
+};
 
   const handleOpenModal = (func) => {
     setSelectedFunc(func);
@@ -112,26 +112,28 @@ const handleDeleteFromDetails = (func) => {
 
       {selectedFunc && (
         <ConfirmModal
-          show={showModal}
-          func={selectedFunc}
-          onClose={() => setShowModal(false)}
-          onConfirm={() => {
-            setFuncionarios((prev) => prev.filter((f) => f.cpf !== selectedFunc.cpf));
-            setShowModal(false);
-          }}
-          text={`Deseja realmente apagar ${selectedFunc.name}?`}
-          color="#EF4444"
-          title="Apagar Funcionário"
-        />
+  show={showModal}
+  func={selectedFunc}
+  onClose={() => setShowModal(false)}
+  onConfirm={() => {
+    setFuncionarios((prev) => prev.filter((f) => f.cpf !== selectedFunc.cpf));
+    setShowModal(false);
+    setShowDetails(false); // fecha também os detalhes
+  }}
+  text={`Deseja realmente apagar ${selectedFunc?.name}?`}
+  color="#EF4444"
+  title="Apagar Funcionário"
+/>
+
       )}
 
       {selectedFunc && (
         <EmployeeDetails
-          show={showDetails}
-          func={selectedFunc}
-          onClose={() => handleDeleteFromDetails}
-         onDelete={handleDeleteFromDetails}
-        />
+  show={showDetails}
+  func={selectedFunc}
+  onClose={() => setShowDetails(false)}
+  onDelete={handleDeleteFromDetails}
+/>
       )}
     </div>
   );

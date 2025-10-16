@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import InputField from "../components/InputField";
 import PhotoInput from "../components/PhotoInput";
+import { IMaskInput } from "react-imask";
 
 export default function EditEmployee() {
   const { cpf } = useParams();
@@ -56,11 +57,14 @@ export default function EditEmployee() {
             placeholder="Digite seu nome"
           />
 
-          <InputField
-            label="CPF"
-            value={cpf}
-            disabled
-          />
+              <p className="text-gray-600 my-1">Documento</p>
+        <IMaskInput
+        mask="000.000.000-00"
+        value={cpf}
+        onAccept={(value) => setCpf(value)}
+        placeholder="Digite o CPF"
+         className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+/>
 
           <InputField
             label="Veículo"

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import InputField from "../components/InputField";
 import PhotoInput from "../components/PhotoInput";
+import { IMaskInput } from "react-imask";
 
 function AddEmployee() {
   const [isOpen, setIsOpen] = useState(true);
@@ -41,13 +42,15 @@ function AddEmployee() {
             onChange={(e) => setName(e.target.value)}
             placeholder="Digite o nome"
           />
-
-          <InputField
-            label="CPF"
-            value={cpf}
-            onChange={(e) => setCpf(e.target.value)}
-            placeholder="Digite o CPF"
-          />
+    <p className="text-gray-600 my-1">Documento</p>
+        <IMaskInput
+        label="Documento"
+        mask="000.000.000-00"
+        value={cpf}
+        onAccept={(value) => setCpf(value)}
+        placeholder="Digite o CPF"
+         className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+/>
 
           <InputField
             label="Veículo"
