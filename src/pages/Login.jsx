@@ -3,31 +3,29 @@ import { Building2, LogIn, Brain } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const [email, setEmail] = useState("");
+  const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Email:", email, "Senha:", senha);
-
+    console.log("Usuário:", usuario, "Senha:", senha);
 
     navigate("/");
   };
 
   return (
     <div className="flex h-screen bg-gray-100">
-
       <div className="flex flex-col justify-center items-center w-1/2 bg-white shadow-lg">
         <h1 className="text-3xl font-bold text-gray-800 mb-8">Login</h1>
 
         <form onSubmit={handleLogin} className="flex flex-col w-3/4 max-w-sm">
-          <label className="text-gray-700 font-semibold mb-1">Email</label>
+          <label className="text-gray-700 font-semibold mb-1">Usuário</label>
           <input
-            type="email"
-            placeholder="Digite seu email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            placeholder="Digite seu Usuário"
+            value={usuario}
+            onChange={(e) => setUsuario(e.target.value)}
             className="border border-gray-300 rounded px-3 py-2 mb-4 focus:ring-2 focus:ring-blue-600 outline-none"
           />
 
@@ -48,7 +46,6 @@ function Login() {
           </button>
         </form>
       </div>
-
 
       <div className="w-1/2 bg-blue-700 text-white flex flex-col justify-center items-center p-10">
         <Building2 size={60} className="mb-6" />
