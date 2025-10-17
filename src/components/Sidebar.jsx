@@ -39,7 +39,7 @@ function Sidebar({ isOpen, setIsOpen }) {
       </nav>
 
       <div className="p-4 border-t border-gray-700">
-        <SidebarLink icon={<LogOut size={20} />} label="Sair" isOpen={isOpen} to="/logout" />
+        <SidebarLink icon={<LogOut size={20} />} label="Sair" isOpen={isOpen} to="/login" />
       </div>
     </div>
   )
