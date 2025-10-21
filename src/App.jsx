@@ -32,9 +32,9 @@ export default function App() {
                 <p className="text-gray-600 mb-4">Visão geral da portaria</p>
 
                 <div className="flex space-x-7 my-9">
-                  <DashInfo icon={Users} text="Total de Funcionários" num={48} color="#1D4ED8" />
-                  <DashInfo icon={CheckCircle} text="Presentes" num={40} color="#10B981" />
-                  <DashInfo icon={XCircle} text="Ausentes" num={8} color="#EF4444" />
+                  <DashInfo icon={Users} text="Total de Funcionários" num={48} color="#1D4ED8" to="/funcionarios" />
+                  <DashInfo icon={CheckCircle} text="Presentes" num={40} color="#10B981"  to="/controle" />
+                  <DashInfo icon={XCircle} text="Ausentes" num={8} color="#EF4444"  to="/controle" />
                   <DashInfo icon={Clipboard} text="Registros Hoje" num={15} color="#F59E0B" />
                 </div>
 

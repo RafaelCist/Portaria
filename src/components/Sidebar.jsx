@@ -1,6 +1,6 @@
-import { Home, Users, Clock, FileText, ShoppingBasket, LogOut, Menu, Building } from "lucide-react"
+import { Home, Users, Clock, FileText, ShoppingBasket, LogOut, Menu, UserCheck } from "lucide-react"
 import { Link } from "react-router-dom"
-
+import logo from "../assets/logo.png" 
 
 function Sidebar({ isOpen, setIsOpen }) {
   return (
@@ -11,15 +11,12 @@ function Sidebar({ isOpen, setIsOpen }) {
     >
       <div className="flex items-center justify-between p-4 border-b border-gray-700">
         <h2
-          className={`text-xl flex font-semibold transition-opacity duration-300 ${
+          className={`text-xl flex items-center font-semibold transition-opacity duration-300 ${
             isOpen ? "opacity-100" : "opacity-0"
           }`}
         >
           {isOpen && (
-            <>
-              <Building size={24} className="mr-2 text-blue-800" />
-              Portaria
-            </>
+            <img src={logo} alt="Logo" draggable="false"  className="h-[35px] w-[150px]" />
           )}
         </h2>
         <button
@@ -31,15 +28,16 @@ function Sidebar({ isOpen, setIsOpen }) {
       </div>
 
       <nav className="flex-1 p-4 space-y-2">
-        <SidebarLink icon={<Home size={20} />} label="Dashboard" isOpen={isOpen} to="/" />
+        <SidebarLink icon={<Home size={20} />} label="Dashboard" isOpen={isOpen} to="/paginainicial" />
         <SidebarLink icon={<Clock size={20} />} label="Controle de Entrada" isOpen={isOpen} to="/controle" />
         <SidebarLink icon={<Users size={20} />} label="Funcionários" isOpen={isOpen} to="/funcionarios" />
+        <SidebarLink icon={<UserCheck size={20} />} label="Visitantes" isOpen={isOpen} to="/visitantes" />
         <SidebarLink icon={<FileText size={20} />} label="Relatórios" isOpen={isOpen} to="/relatorios" />
         <SidebarLink icon={<ShoppingBasket size={20} />} label="Cesta Básica" isOpen={isOpen} to="/cestabasica" />
       </nav>
 
       <div className="p-4 border-t border-gray-700">
-        <SidebarLink icon={<LogOut size={20} />} label="Sair" isOpen={isOpen} to="/login" />
+        <SidebarLink icon={<LogOut size={20} />} label="Sair" isOpen={isOpen} to="/" />
       </div>
     </div>
   )

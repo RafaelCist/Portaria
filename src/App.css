@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+.recharts-surface,
+.recharts-wrapper svg,
+.recharts-bar,
+.recharts-pie {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.recharts-wrapper svg {
+  pointer-events: auto;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
