@@ -5,10 +5,15 @@ import ConfirmModal from "../components/ConfirmModal";
 import { Link } from "react-router-dom";
 import InputSearch from "../components/InputSearch";
 import EmployeeDetails from "../components/EmployeeDetails";
+import AddVehicle from "../components/AddVehicle";
 
 function Employees() {
   const [funcionarios, setFuncionarios] = useState([
-    { name: "Rafael", cpf: "123.456.789-00", veiculo: "AVC-1326" },
+    { name: "Rafael", cpf: "123.456.789-00", veiculos: [
+    { nome: "Fiat Uno", placa: "ABC-1234", foto: "link_da_foto.jpg" },
+    { nome: "Honda Civic", placa: "XYZ-9876" },
+  ],
+ },
     { name: "Maria", cpf: "987.654.321-00", veiculo: "ADG-5467" },
     { name: "Carlos", cpf: "111.222.333-44", veiculo: "GAM-8303" },
   ]);
@@ -135,7 +140,10 @@ const handleDeleteFromDetails = (func) => {
   onDelete={handleDeleteFromDetails}
 />
       )}
+      
     </div>
+
+
   );
 }
 
