@@ -5,7 +5,7 @@ import ConfirmModal from "../components/ConfirmModal";
 import { Link } from "react-router-dom";
 import InputSearch from "../components/InputSearch";
 import EmployeeDetails from "../components/EmployeeDetails";
-import AddVehicle from "../components/AddVehicle";
+
 
 function Employees() {
   const [funcionarios, setFuncionarios] = useState([

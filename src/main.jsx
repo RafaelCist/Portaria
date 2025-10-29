@@ -9,6 +9,7 @@ import AddEmployee from './pages/AddEmployee.jsx'
 import EditEmployee from './pages/EditEmployee.jsx'
 import Login from './pages/Login.jsx'
 import Visitors from './pages/Visitors.jsx'
+import AddVisitor from './pages/AddVisitor.jsx'
 
 const router = createBrowserRouter([
   { path: "/", element: <Login /> },
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
   { path: "/editar", element: <EditEmployee /> },
   { path: "/paginainicial", element: <App /> },
   { path: "/visitantes", element: <Visitors /> },
+  { path: "/adicionarvisitante", element: <AddVisitor /> },
   
 ])
 
