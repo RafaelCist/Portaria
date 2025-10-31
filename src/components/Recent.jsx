@@ -8,7 +8,7 @@ function Recent({ records }) {
         .map((record, index) => (
           <div
             key={index}
-            className="flex items-center justify-between bg-white bg-gray-100 p-3 rounded shadow-sm"
+            className="flex items-center justify-between bg-white p-3 rounded shadow-sm"
           >
             <div className="mr-3">
               {record.entry ? (
