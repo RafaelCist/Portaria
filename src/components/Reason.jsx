@@ -16,7 +16,7 @@ function Reason({ show, func, onClose, onConfirm }) {
           Informe o motivo da entrada de <span className="font-semibold">{func?.name}</span>.
         </p>
 
-        {/* Campo título do motivo */}
+
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700 mb-1">Título</label>
           <input
@@ -28,7 +28,7 @@ function Reason({ show, func, onClose, onConfirm }) {
           />
         </div>
 
-        {/* Campo descrição */}
+
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-1">Descrição</label>
           <textarea
@@ -39,7 +39,6 @@ function Reason({ show, func, onClose, onConfirm }) {
           />
         </div>
 
-        {/* Botões */}
         <div className="flex justify-end gap-3">
           <button
             onClick={onClose}

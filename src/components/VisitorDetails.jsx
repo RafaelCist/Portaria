@@ -1,4 +1,3 @@
-import { X } from "lucide-react"
 
 function VisitorDetails({ show, visitor, onClose }) {
   if (!show || !visitor) return null
@@ -14,12 +13,11 @@ function VisitorDetails({ show, visitor, onClose }) {
 
     
 
-        {/* Cabeçalho */}
         <h2 className="text-2xl font-bold text-gray-800 mb-4">
           Detalhes do Visitante
         </h2>
 
-        {/* Corpo */}
+
         <div className="space-y-3">
           <div>
             <p className="text-sm text-gray-500 font-medium">Nome</p>
@@ -65,7 +63,6 @@ function VisitorDetails({ show, visitor, onClose }) {
           </div>
         </div>
 
-        {/* Rodapé */}
         <div className="mt-6 flex justify-end">
           <button
             onClick={onClose}

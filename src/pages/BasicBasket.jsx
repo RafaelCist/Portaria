@@ -38,7 +38,7 @@ function BasicBasket() {
 
       if (newNames.length > 0) {
         setPendingNames(newNames);
-        setShowConfirm(true); // Abre o modal antes de adicionar
+        setShowConfirm(true);
       }
     };
     reader.readAsText(file, "UTF-8");
@@ -55,7 +55,7 @@ function BasicBasket() {
     setShowConfirm(false);
   };
 
-  // Ordena beneficiários no topo
+
   const sortedEmployees = [...employees].sort((a, b) => {
     const aIsBeneficiary = beneficiaries.includes(a.name);
     const bIsBeneficiary = beneficiaries.includes(b.name);
@@ -70,15 +70,15 @@ function BasicBasket() {
         <h1 className="text-3xl font-bold text-gray-800 mb-4">Cesta Básica</h1>
         <p className="text-gray-600 mb-6">Gerencie os beneficiários de cesta básica.</p>
 
-        {/* Cards principais */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {/* Card de quantidade */}
+
           <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-200">
             <h2 className="text-xl font-semibold text-gray-800 mb-2">Total de Beneficiários</h2>
             <p className="text-5xl font-bold text-blue-600">{beneficiaries.length}</p>
           </div>
 
-          {/* Card de envio */}
+
           <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-200">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">Enviar Lista de Beneficiários</h2>
             <p className="text-gray-600 mb-4 text-sm">
@@ -106,7 +106,7 @@ function BasicBasket() {
           </div>
         </div>
 
-        {/* Lista de funcionários */}
+
         <div className="bg-white rounded-2xl shadow-md border border-gray-200 p-6">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
             Lista de Funcionários
@@ -143,11 +143,11 @@ function BasicBasket() {
         </div>
       </main>
 
-      {/* Modal de confirmação */}
+
       {showConfirm && (
         <ConfirmModal
           show={showConfirm}
-          func={{ entry: false }} // só pra reaproveitar o componente
+          func={{ entry: false }} 
           title="Confirmar Adição"
           text={`Adicionar ${pendingNames.length} nome(s) à lista de beneficiários?`}
           color="#2563EB"

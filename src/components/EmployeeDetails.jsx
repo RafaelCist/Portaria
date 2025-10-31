@@ -24,9 +24,9 @@ function EmployeeDetails({ show, onClose, func, onDelete }) {
         className="relative w-[1200px] h-[700px] bg-gray-100 rounded shadow overflow-hidden flex"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Lado esquerdo */}
+
         <div className="w-[400px] flex flex-col space-y-4 p-4 pr-0 h-full">
-          {/* Cabeçalho */}
+
           <div className="flex space-x-4 items-center h-[60px] bg-white rounded shadow px-2">
             <button
               className="flex justify-center w-8 h-8 items-center cursor-pointer border border-gray-300 rounded-full transform transition-transform duration-100 hover:scale-125"
@@ -37,7 +37,7 @@ function EmployeeDetails({ show, onClose, func, onDelete }) {
             <h1 className="text-2xl">Detalhes</h1>
           </div>
 
-          {/* Card principal */}
+
           <div className="bg-white rounded shadow flex-1 flex flex-col justify-between overflow-hidden">
             <div className="border-b border-gray-200 rounded w-full h-[200px] flex justify-center items-center text-center mb-4">
               <div className="flex flex-col items-center">
@@ -49,7 +49,7 @@ function EmployeeDetails({ show, onClose, func, onDelete }) {
               </div>
             </div>
 
-            {/* Informações */}
+
             <div className="px-4">
               <p className="text-gray-600 font-bold">Informações</p>
               <div className="space-y-3 border-1 border-b-0 border-gray-200 rounded pt-2">
@@ -58,7 +58,6 @@ function EmployeeDetails({ show, onClose, func, onDelete }) {
               </div>
             </div>
 
-            {/* Botões */}
             <div className="flex gap-3 mt-4 px-4 pb-4">
               <button
                 onClick={handleEdit}
@@ -76,12 +75,11 @@ function EmployeeDetails({ show, onClose, func, onDelete }) {
           </div>
         </div>
 
-        {/* Lado direito */}
         <div className="flex-1 flex flex-col p-4 space-y-4 h-full overflow-auto">
           <div className="bg-white shadow rounded p-5 flex-1 overflow-auto border border-gray-200">
             <h2 className="text-xl font-semibold mb-4">Veículos</h2>
 
-            {/* Card de veículo */}
+
             <div className="grid grid-cols-3 gap-4">
               {func.veiculos && func.veiculos.length > 0 ? (
                 func.veiculos.map((veiculo, index) => (

@@ -154,7 +154,7 @@ function Visitors() {
             <p className="text-gray-500 p-3">Nenhum visitante presente.</p>
           )}
 
-          {/* === LISTA DE VISITANTES AUSENTES === */}
+     
           <h2 className="text-xl font-semibold text-gray-700 mt-6 mb-2">Visitantes Registrados</h2>
           <div className="grid grid-cols-5 bg-gray-200 p-3 font-semibold text-gray-700 my-2">
             <div>Nome</div>

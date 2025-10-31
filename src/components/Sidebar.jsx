@@ -23,7 +23,7 @@ function Sidebar({ isOpen, setIsOpen }) {
 
   const confirmLogout = () => {
     setShowConfirm(false);
-    navigate("/"); // ✅ redireciona corretamente
+    navigate("/"); 
   };
 
   return (
@@ -116,7 +116,7 @@ function Sidebar({ isOpen, setIsOpen }) {
 
           <ConfirmModal
       show={showConfirm}
-      func={{}} // 👈 adiciona isso
+      func={{}}
       title="Deseja realmente sair?"
       text="Você será desconectado do sistema."
       onClose={() => setShowConfirm(false)}

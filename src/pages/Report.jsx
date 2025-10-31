@@ -5,7 +5,7 @@ function Report() {
   const [isOpen, setIsOpen] = useState(true);
   const [month, setMonth] = useState("");
 
-  // Simulação de dados de frequência
+
   const [reports, setReports] = useState([
     { name: "Rafael", doc: "123.456.789-00", workedDays: 20, absences: 2 },
     { name: "Maria", doc: "987.654.321-00", workedDays: 22, absences: 0 },
@@ -26,7 +26,7 @@ function Report() {
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <main className="flex-1 p-6 transition-all duration-300">
-        {/* Cabeçalho */}
+
         <div className="flex justify-between">
           <div>
             <h1 className="text-3xl font-bold text-gray-800 mb-4">Relatórios</h1>
@@ -34,7 +34,7 @@ function Report() {
           </div>
         </div>
 
-        {/* Filtros */}
+
         <div className="w-full h-[200px] rounded-2xl p-4 shadow-md border border-gray-200 bg-white">
           <h1 className="text-2xl font-medium text-gray-800 mb-4">Filtros</h1>
           <div className="flex justify-evenly">
@@ -61,7 +61,7 @@ function Report() {
           </div>
         </div>
 
-        {/* Lista de Relatórios */}
+
         <div className="mt-8 bg-white rounded-2xl shadow-md border border-gray-200 p-6">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Frequência dos Funcionários</h2>
 
