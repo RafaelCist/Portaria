@@ -10,6 +10,8 @@ import EditEmployee from './pages/EditEmployee.jsx'
 import Login from './pages/Login.jsx'
 import Visitors from './pages/Visitors.jsx'
 import AddVisitor from './pages/AddVisitor.jsx'
+import Report from './pages/report.jsx'
+import BasicBasket from './pages/BasicBasket.jsx'
 
 const router = createBrowserRouter([
   { path: "/", element: <Login /> },
@@ -20,6 +22,8 @@ const router = createBrowserRouter([
   { path: "/paginainicial", element: <App /> },
   { path: "/visitantes", element: <Visitors /> },
   { path: "/adicionarvisitante", element: <AddVisitor /> },
+  { path: "/relatorios", element: <Report /> },
+  { path: "/cestabasica", element: <BasicBasket />},
   
 ])
 
